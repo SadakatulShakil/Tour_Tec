@@ -47,6 +47,8 @@ dependencies {
     implementation 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
     //facebook
     implementation 'com.facebook.android:facebook-login:[5,6)'
+    //carouselView
+    implementation 'com.synnapps:carouselview:0.1.5'
 
 
 }

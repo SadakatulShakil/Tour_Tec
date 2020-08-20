@@ -8,5 +8,6 @@
     <color name="red">#D1392D</color>
     <color name="app_background">#e0e0e0</color>
     <color name="white">#FFFFFF</color>
+    <color name="background">#1903DAC5</color>
 
 </resources>
