@@ -137,6 +137,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/expenseOfEventsLayout"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginLeft="8dp"
@@ -147,7 +148,6 @@
                     app:cardCornerRadius="8dp">
 
                     <LinearLayout
-                        android:id="@+id/expenseOfEventsLayout"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/white"
@@ -195,7 +195,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/touristPlaces">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/createEventsLayouts"
+                    android:id="@+id/countryPlaceLayout"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginLeft="16dp"
@@ -229,7 +229,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/onGoingEventsLayouts"
+                    android:id="@+id/foreignPlaceLayout"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginLeft="8dp"
@@ -319,7 +319,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/others">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/createEventsLayoutss"
+                    android:id="@+id/weatherLayout"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginLeft="16dp"
@@ -353,7 +353,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/onGoingEventsLayoutss"
+                    android:id="@+id/websiteLayout"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginLeft="8dp"
@@ -387,6 +387,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/facebookPageLayout"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginLeft="8dp"
@@ -397,7 +398,6 @@
                     app:cardCornerRadius="8dp">
 
                     <LinearLayout
-                        android:id="@+id/expenseOfEventsLayouts"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/white"
