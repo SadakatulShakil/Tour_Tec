@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Tour Tec</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+
+    <string name="drawer_closed">drawer_closed</string>
+    <string name="drawer_open">drawer_open</string>
+
+
+    <string name="create">Create\nEvents</string>
+    <string name="ongoing">OnGoing\nEvents</string>
+    <string name="expense">Events\nExpenses</string>
+
+    <string name="country">Country</string>
+    <string name="abroad">Foreign</string>
+
+    <string name="weather">Weather</string>
+    <string name="website">Website</string>
+    <string name="facebook">Facebook</string>
 </resources>
