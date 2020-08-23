@@ -28,9 +28,7 @@ public class AddEventsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(AddEventsActivity.this, "Event created !", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(AddEventsActivity.this, EventsActivity.class);
-                startActivity(intent);
-                finish();
+                onBackPressed();
             }
         });
 
@@ -38,9 +36,7 @@ public class AddEventsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(AddEventsActivity.this, "Event created failed!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(AddEventsActivity.this, EventsActivity.class);
-                startActivity(intent);
-                finish();
+                onBackPressed();
             }
         });
     }

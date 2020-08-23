@@ -28,6 +28,7 @@ public class EventsActivity extends AppCompatActivity {
 
         initView();
         dToolbar.setNavigationIcon(R.drawable.ic_arrow);
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.eventsFragmentContainer, new CreateEventsFragment())
