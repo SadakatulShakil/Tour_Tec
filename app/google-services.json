@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "805379683305",
+    "firebase_url": "https://tour-tec.firebaseio.com",
+    "project_id": "tour-tec",
+    "storage_bucket": "tour-tec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:805379683305:android:5c3e45728eed790bb95178",
+        "android_client_info": {
+          "package_name": "com.example.tourtec"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "805379683305-mblrsr08cko8ne2opkdqd5app3c77lo0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQQTS-6DlJlVtWMiTEQhkkylSF5__t94U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "805379683305-mblrsr08cko8ne2opkdqd5app3c77lo0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
