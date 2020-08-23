@@ -4,16 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:elevation="8dp"
     tools:context=".Activity.AddEventsActivity">
 
     <TextView
-        android:id="@+id/postTV"
+        android:id="@+id/saveTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:paddingBottom="5dp"
         android:drawablePadding="8dp"
-        android:text="Post"
+        android:text="Save"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/black"
         android:drawableRight="@drawable/ic_save"
@@ -28,7 +30,7 @@
         android:drawableLeft="@drawable/ic_close"
         android:drawablePadding="8dp"
         android:paddingBottom="5dp"
-        android:text="Cancle"
+        android:text="Cancel"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cancelTV" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/NameTextField"
+        android:id="@+id/eventNameTextField"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -51,7 +53,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="32dp"
-        android:hint="   Full Name"
+        android:hint="   Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view1">
@@ -67,15 +69,15 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailTextField"
+        android:id="@+id/descriptionTextField"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:hint="   Email"
+        android:hint="   description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NameTextField">
+        app:layout_constraintTop_toBottomOf="@+id/eventNameTextField">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -88,35 +90,35 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/phoneTextField"
+        android:id="@+id/eventBudgetTextField"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:hint="   phone"
+        android:hint="   Budget"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailTextField">
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTextField">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:imeOptions="actionNext"
+            android:imeOptions="actionDone"
             android:inputType="number"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/locationTextField"
+        android:id="@+id/startTimeTextField"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:hint="   Location"
+        android:hint="   Start Date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneTextField">
+        app:layout_constraintTop_toBottomOf="@+id/eventBudgetTextField">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -128,15 +130,15 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordTextField"
+        android:id="@+id/endTimeTextField"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:hint="   Password"
+        android:hint="   End Date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/locationTextField">
+        app:layout_constraintTop_toBottomOf="@+id/startTimeTextField">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"

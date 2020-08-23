@@ -7,6 +7,7 @@
     tools:context=".Fargment.CreateEventsFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewForHistory"
         android:layout_width="match_parent"
@@ -18,7 +19,7 @@
         tools:itemCount="9" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addHistoryFAB"
+        android:id="@+id/addEventsFAB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

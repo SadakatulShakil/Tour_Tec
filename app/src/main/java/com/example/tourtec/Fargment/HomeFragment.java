@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
@@ -20,6 +21,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.tourtec.Activity.EventsActivity;
 import com.example.tourtec.R;
 import com.google.android.material.navigation.NavigationView;
 import com.synnapps.carouselview.CarouselView;
@@ -35,6 +37,10 @@ public class HomeFragment extends Fragment {
             R.drawable.saintmartin, R.drawable.sajek, R.drawable.sundarban, R.drawable.tanguarhaor,
             R.drawable.bichanakandi, R.drawable.bogalake, R.drawable.madhobkundo,
             R.drawable.niladri, R.drawable.panthumai, R.drawable.chandronath};
+
+    private CardView createEventCard, onGoingEventCard,
+            eventExpensesCard, countryPlaceCard, foreignPlaceCard, weatherCard,
+            websiteCard, FacebookCard;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -68,6 +74,19 @@ public class HomeFragment extends Fragment {
         carouselView.setImageListener(imageListener);
         carouselView.setPageCount(sampleImages.length);
 
+        ClickEvents();
+
+    }
+
+    private void ClickEvents() {
+
+        createEventCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, EventsActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     private void initView(View view) {
@@ -77,6 +96,11 @@ public class HomeFragment extends Fragment {
         carouselView = view.findViewById(R.id.carouselView);
         navigationView = view.findViewById(R.id.navigationDrawer);
         drawerLayout = view.findViewById(R.id.drawer);
+        ///cardViewDefine///
+
+        createEventCard = view.findViewById(R.id.createEventsLayout);
+        onGoingEventCard = view.findViewById(R.id.onGoingEventsLayout);
+        eventExpensesCard = view.findViewById(R.id.expenseOfEventsLayout);
     }
 
     ImageListener imageListener = new ImageListener() {
