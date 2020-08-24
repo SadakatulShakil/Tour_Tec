@@ -7,7 +7,8 @@
     <color name="black">#000</color>
     <color name="red">#D1392D</color>
     <color name="app_background">#7AE0E0E0</color>
+    <color name="view">#EDE4E4</color>
     <color name="white">#FFFFFF</color>
-    <color name="background">#1903DAC5</color>
+    <color name="background">#909393</color>
 
 </resources>

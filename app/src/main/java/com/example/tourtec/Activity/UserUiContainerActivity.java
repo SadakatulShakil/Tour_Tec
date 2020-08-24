@@ -12,10 +12,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
-import com.example.tourtec.Fargment.HistoryFragment;
-import com.example.tourtec.Fargment.HomeFragment;
-import com.example.tourtec.Fargment.NearbyPlaceFragment;
-import com.example.tourtec.Fargment.ProfileFragment;
+import com.example.tourtec.Fragment.HistoryFragment;
+import com.example.tourtec.Fragment.HomeFragment;
+import com.example.tourtec.Fragment.NearbyPlaceFragment;
+import com.example.tourtec.Fragment.ProfileFragment;
 import com.example.tourtec.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 

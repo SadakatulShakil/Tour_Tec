@@ -11,8 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.example.tourtec.Fargment.CreateEventsFragment;
-import com.example.tourtec.Fargment.HomeFragment;
+import com.example.tourtec.Fragment.CreateEventsFragment;
 import com.example.tourtec.R;
 
 public class EventsActivity extends AppCompatActivity {

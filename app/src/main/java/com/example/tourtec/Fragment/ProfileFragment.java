@@ -1,4 +1,4 @@
-package com.example.tourtec.Fargment;
+package com.example.tourtec.Fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,16 +11,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-import com.example.tourtec.Activity.AddEventsActivity;
+import com.example.tourtec.Activity.EditProfileActivity;
 import com.example.tourtec.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class CreateEventsFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
-    private FloatingActionButton addEventsFb;
+    private TextView editProfile;
     private Context context;
-    public CreateEventsFragment() {
+    public ProfileFragment() {
         // Required empty public constructor
     }
 
@@ -34,30 +34,28 @@ public class CreateEventsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_events, container, false);
+        return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         initView(view);
         clickEvents();
     }
 
     private void clickEvents() {
 
-        addEventsFb.setOnClickListener(new View.OnClickListener() {
+        editProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, AddEventsActivity.class);
+                Intent intent = new Intent(context, EditProfileActivity.class);
                 context.startActivity(intent);
             }
         });
     }
 
     private void initView(View view) {
-
-        addEventsFb = view.findViewById(R.id.addEventsFAB);
+        editProfile = view.findViewById(R.id.profileEditBt);
     }
 }

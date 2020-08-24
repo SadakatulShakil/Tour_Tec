@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/app_background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fargment.NearbyPlaceFragment">
+    tools:context=".Fragment.NearbyPlaceFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.appcompat.widget.Toolbar

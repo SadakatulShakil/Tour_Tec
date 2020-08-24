@@ -1,4 +1,4 @@
-package com.example.tourtec.Fargment;
+package com.example.tourtec.Fragment;
 
 import android.content.Context;
 import android.content.Intent;
