@@ -22,6 +22,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -85,34 +86,47 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
         if (phone.isEmpty()) {
-            tiePhone.setError("Email is required!");
+            tiePhone.setError("Phone is required!");
             tiePhone.requestFocus();
             return;
         }
 
         if (location.isEmpty()) {
-            tieLocation.setError("Email is required!");
+            tieLocation.setError("Location is required!");
             tieLocation.requestFocus();
             return;
         }
 
         if (password.isEmpty()) {
-            tiePassword.setError("Email is required!");
+            tiePassword.setError("Password is required!");
             tiePassword.requestFocus();
             return;
         }
 
         if (cPassword.isEmpty()) {
-            tieConfirmPassword.setError("Email is required!");
+            tieConfirmPassword.setError("Confirm your Password!");
             tieConfirmPassword.requestFocus();
             return;
         }
 
-       /* if (password.equals(cPassword)) {
+        if (password.length() < 6) {
+            tiePassword.setError("Password least 6 characters!");
+            tiePassword.requestFocus();
+            return;
+        }
+
+        if (!email.matches(EMAIL_PATTERN)) {
+            tieEmail.setError("Invalid email pattern!");
+            tieEmail.requestFocus();
+            return;
+        }
+
+        if (password.equals(cPassword)) {
+            SignUp(name,email,phone,location,password);
+
         } else {
             Toast.makeText(this, "Password are Not Matched!", Toast.LENGTH_SHORT).show();
-        }*/
-        SignUp(name,email,phone,location,password);
+        }
 
 
     }
@@ -152,6 +166,9 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        firebaseAuth = FirebaseAuth.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
         tbtSignIn = findViewById(R.id.signInTxtBt);
 
         tieName = findViewById(R.id.nameEditText);

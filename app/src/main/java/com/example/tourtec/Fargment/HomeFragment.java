@@ -22,8 +22,10 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.tourtec.Activity.EventsActivity;
+import com.example.tourtec.MainActivity;
 import com.example.tourtec.R;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
@@ -140,11 +142,11 @@ public class HomeFragment extends Fragment {
                         Toast.makeText(context, "About Under Construction be Patient!", Toast.LENGTH_LONG).show();
                         break;
                     case R.id.logOut:
-                        /*FirebaseAuth.getInstance().signOut();
+                        FirebaseAuth.getInstance().signOut();
                         getActivity().finish();
-                        Intent intent4 = new Intent(context, SignInActivity.class);
-                        startActivity(intent4);*/
-                        Toast.makeText(context, "LogOut Under Construction be Patient!", Toast.LENGTH_LONG).show();
+                        Intent intent4 = new Intent(context, MainActivity.class);
+                        startActivity(intent4);
+                        Toast.makeText(context, "Successfully Log Out", Toast.LENGTH_LONG).show();
                         break;
 
                     default:

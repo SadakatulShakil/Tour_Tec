@@ -11,11 +11,11 @@ import android.widget.ImageView;
 
 import com.example.tourtec.MainActivity;
 import com.example.tourtec.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SplashActivity extends AppCompatActivity {
     private ImageView logoImg, textImg;
     private Animation topAnim, bottomAnim;
-
     private static int SPLASH_SCREEN = 4000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
