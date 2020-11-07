@@ -1,8 +1,11 @@
 package com.example.tourtec.Model;
 
-public class Events {
+import java.io.Serializable;
+
+public class Events implements Serializable {
     private String eventId;
     private String createdBy;
+    private String creatorId;
     private String eventName;
     private String eventDescription;
     private String eventBudget;
@@ -13,10 +16,12 @@ public class Events {
     public Events() {
     }
 
-    public Events(String eventId, String createdBy, String eventName,
-                  String eventDescription, String eventBudget, String eventStartTime, String eventEndTime, String addingTime) {
+    public Events(String eventId, String createdBy, String creatorId, String eventName,
+                  String eventDescription, String eventBudget,
+                  String eventStartTime, String eventEndTime, String addingTime) {
         this.eventId = eventId;
         this.createdBy = createdBy;
+        this.creatorId = creatorId;
         this.eventName = eventName;
         this.eventDescription = eventDescription;
         this.eventBudget = eventBudget;
@@ -103,4 +108,11 @@ public class Events {
         this.eventEndTime = eventEndTime;
     }
 
+    public String getCreatorId() {
+        return creatorId;
+    }
+
+    public void setCreatorId(String creatorId) {
+        this.creatorId = creatorId;
+    }
 }

@@ -47,8 +47,8 @@ public class AddEventsActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private DatabaseReference UserRef;
     private DatabaseReference eventsRef;
-    private Events events;
     private User user;
+    private String userName;
     private FirebaseUser fUser;
     protected static TextView viewDate1,viewDate2;
     @Override
@@ -91,6 +91,7 @@ public class AddEventsActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
             if(snapshot.exists()){
                 user =snapshot.getValue(User.class);
+                userName = user.getUserName();
             }
             }
 
@@ -147,8 +148,6 @@ public class AddEventsActivity extends AppCompatActivity {
 
                 storeEventsInfo(eName, eDescription, eBudget, eStartDate, eEndDate, addingTime);
 
-                Toast.makeText(AddEventsActivity.this, "Event created !", Toast.LENGTH_SHORT).show();
-                onBackPressed();
             }
         });
 
@@ -169,14 +168,15 @@ public class AddEventsActivity extends AppCompatActivity {
         String userId = fUser.getUid();
         String pushId = eventsRef.push().getKey();
 
-        Events events = new Events(pushId, user.getUserName(), eName, eDescription, eBudget,
+        Events events = new Events(pushId, userName, userId, eName, eDescription, eBudget,
                 eStartDate, eEndDate, addingTime);
 
         eventsRef.child(pushId).setValue(events).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(AddEventsActivity.this, "Successful!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddEventsActivity.this, "Event Created Successfully!", Toast.LENGTH_SHORT).show();
+                    onBackPressed();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
