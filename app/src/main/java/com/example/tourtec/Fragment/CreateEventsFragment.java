@@ -13,12 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.example.tourtec.Activity.AddEventsActivity;
 import com.example.tourtec.Adapter.EventsAdapter;
 import com.example.tourtec.Model.Events;
 import com.example.tourtec.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,6 +39,10 @@ public class CreateEventsFragment extends Fragment {
     private ArrayList<Events> mEventsArrayList = new ArrayList<>();
     private EventsAdapter mEventsAdapter;
     private DatabaseReference eventsInfoReference;
+    private ProgressBar progressBar;
+    private Button myEventsBt, allEventsBt;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseUser firebaseUser;
     public CreateEventsFragment() {
         // Required empty public constructor
     }
@@ -63,8 +71,54 @@ public class CreateEventsFragment extends Fragment {
         mEventsAdapter = new EventsAdapter(context, mEventsArrayList);
         eventsRecyclerView.setAdapter(mEventsAdapter);
 
-        retrieveEventsList();
+        retrieveMyEventList();
+
+        myEventsBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                retrieveMyEventList();
+            }
+        });
+
+        allEventsBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                retrieveEventsList();
+            }
+        });
+
     }
+
+    private void retrieveMyEventList() {
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = firebaseAuth.getCurrentUser();
+        final String userID = firebaseUser.getUid();
+        eventsInfoReference = FirebaseDatabase.getInstance().getReference("EventsInfo");
+
+        eventsInfoReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                mEventsArrayList.clear();
+                for(DataSnapshot eventSnapshot : snapshot.getChildren()){
+                    Events eventsInfo =eventSnapshot.getValue(Events.class);
+                    if(userID.equals(eventsInfo.getCreatorId())){
+
+                        mEventsArrayList.add(eventsInfo);
+                    }
+
+                }
+                mEventsAdapter.notifyDataSetChanged();
+                progressBar.setVisibility(View.GONE);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
 
     private void retrieveEventsList() {
 
@@ -80,6 +134,7 @@ public class CreateEventsFragment extends Fragment {
                 mEventsArrayList.add(eventsInfo);
             }
             mEventsAdapter.notifyDataSetChanged();
+            progressBar.setVisibility(View.GONE);
 
             }
 
@@ -105,5 +160,8 @@ public class CreateEventsFragment extends Fragment {
 
         addEventsFb = view.findViewById(R.id.addEventsFAB);
         eventsRecyclerView = view.findViewById(R.id.recyclerViewForEventList);
+        progressBar = view.findViewById(R.id.progressBar);
+        myEventsBt = view.findViewById(R.id.myEventsList);
+        allEventsBt = view.findViewById(R.id.allEvents);
     }
 }

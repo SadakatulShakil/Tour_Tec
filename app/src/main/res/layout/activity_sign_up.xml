@@ -13,6 +13,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="20dp"
         android:text="Sign Up,"
+        android:fontFamily="@font/bangla_regular"
         android:textColor="@color/colorAccent"
         android:textSize="30sp"
         android:textStyle="bold"

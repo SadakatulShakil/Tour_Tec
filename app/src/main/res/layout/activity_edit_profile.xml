@@ -16,18 +16,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark" />
+        app:theme="@style/ThemeOverlay.AppCompat.Dark" >
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="170dp"
-        android:layout_height="60dp"
-        android:layout_alignBottom="@+id/toolbar"
-        android:src="@drawable/edit_profile"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/bangla_regular"
+            android:textSize="30sp"/>
+
+    </androidx.appcompat.widget.Toolbar>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/previewImage"
